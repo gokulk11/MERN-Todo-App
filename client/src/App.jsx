@@ -1,15 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+    <>
+      <div className="app-container sm:grid sm:grid-cols-[250px_1fr]">
+        <div className="hidden sm:h-[100vh] sm:block">
+          <Header />
+        </div>
+        <div className="">
+          <Outlet />
+        </div>
+      </div>
+    </>
+    </>
   );
 }
 
