@@ -30,7 +30,7 @@ const signIn = async (req, res, next) => {
   try {
     const validUser = await User.findOne({ email });
     if (!validUser) {
-      return res.status(404).json({ message: "User not found!" });
+      return res.status(404).json({ success: false, message: "User not found!" });
     }
     const validPassword = bcrypt.compareSync(password, validUser.password);
     if (!validPassword) {

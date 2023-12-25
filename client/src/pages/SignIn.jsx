@@ -32,7 +32,7 @@ const SignIn = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      
+
       if (data.success === false) {
         dispatch(signInFailure(data.message));
         return;
@@ -70,7 +70,7 @@ const SignIn = () => {
             disabled={loading}
             className="mt-8 bg-slate-600 hover:bg-slate-500 py-2 text-white rounded-sm"
             type="submit">
-            {loading ? 'Loading...' : 'Sign In'}
+            {loading ? "Loading..." : "Sign In"}
           </button>
         </form>
         <span className=" inline-block mt-6 text-sm">
